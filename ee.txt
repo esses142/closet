@@ -1,0 +1,144 @@
+local player = game.Players.LocalPlayer -- Assuming this is a LocalScript
+
+-- Function to update walk speed based on slider value
+local function updateWalkSpeed(value)
+    local character = player.Character or player.CharacterAdded:Wait()
+    if character and character:FindFirstChild("Humanoid") then
+        character.Humanoid.WalkSpeed = value
+    end
+end
+
+-- Function to update jump power based on slider value
+local function updateJumpPower(value)
+    local character = player.Character or player.CharacterAdded:Wait()
+    if character and character:FindFirstChild("Humanoid") then
+        character.Humanoid.JumpPower = value
+    end
+end
+
+-- GUI setup using Rayfield or any other UI library
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "closet cheate",
+    LoadingTitle = "Jet on top fr",
+    LoadingSubtitle = "by zinx",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "Jet on top fr",
+        FileName = "Jet on top fr"
+    },
+    KeySystem = false, -- Set this to true to use their key system
+    KeySettings = {
+        Title = "Sirius Hub",
+        Subtitle = "Key System",
+        Note = "Join the discord (discord.gg/sirius)",
+        SaveKey = true,
+        Key = "ABCDEF"
+    }
+})
+
+Rayfield:Notify("Title Example", "Content/Description Example", 4483362458) -- Notification -- Title, Content, Image
+
+local Tab1 = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Tab2 = Window:CreateTab("Misc", 4483362458) -- Title, Image
+local Tab3 = Window:CreateTab("Visuals", 4483362458) -- Title, Image
+
+local Section = Tab1:CreateSection("Aimbot/lock")
+
+local Button1 = Tab1:CreateButton({
+    Name = "Hood customs azure",
+    Callback = function()
+        --[[
+############################################################################
+#     _     ______   _ ____  _____   __  __  ___  ____  ____  _____ ____   #
+#    / \   |__  / | | |  _ \| ____| |  \/  |/ _ \|  _ \|  _ \| ____|  _ \  #
+#   / _ \    / /| | | | |_) |  _|   | |\/| | | | | | | | | | |  _| | | | | #
+#  / ___ \  / /_| |_| |  _ <| |___  | |  | | |_| | |_| | |_| | |___| |_| | #
+# /_/   \_\/____|\___/|_| \_\_____| |_|  |_|\___/|____/|____/|_____|____/  #
+#                                                                          #
+#  _                   _        _                                          #
+# | |__  _   _        / \   ___| |_ _   _ _ __ _ __                        #
+# | '_ \| | | |      / _ \ / __| __| | | | '__| '_ \                       #
+# | |_) | |_| |     / ___ \ (__| |_| |_| | |  | | | |                      #
+# |_.__/ \__, |    /_/   \_\___|\__|\__, |_|  |_| |_|                      #
+#        |___/                      |___/                                  #
+############################################################################
+
+Actyrn or discord.gg/azuremodded or discord.gg/hUvujCnGMb
+Original script credits go to Elegant and Weda
+
+--]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+    end,
+})
+
+local Button2 = Tab1:CreateButton({
+    Name = "anti lock",
+    Callback = function()
+        local Toggled = true
+local KeyCode = Enum.KeyCode.Z
+local hip = 2.80
+local val = -35
+
+local function adjustVelocity()
+    local player = game.Players.LocalPlayer
+    local rootPart = player.Character.HumanoidRootPart
+    local oldVelocity = rootPart.Velocity
+    rootPart.Velocity = Vector3.new(oldVelocity.X, val, oldVelocity.Z)
+    player.Character.Humanoid.HipHeight = hip
+end
+
+local function onInputBegan(input)
+    if input.KeyCode == KeyCode and not game:GetService('UserInputService'):GetFocusedTextBox() then
+        Toggled = not Toggled
+        if Toggled then
+            while Toggled do
+                adjustVelocity()
+                task.wait()
+            end
+        else
+            game.Players.LocalPlayer.Character.Humanoid.HipHeight = hip
+        end
+    end
+end
+
+game:GetService('UserInputService').InputBegan:Connect(onInputBegan)
+    end,
+})
+
+local Button3 = Tab1:CreateButton({
+    Name = "nothing",
+    Callback = function()
+    
+    end,
+})
+
+local WalkSpeedSlider = Tab2:CreateSlider({
+    Name = "WalkSpeed Slider",
+    Range = {0, 100},
+    Increment = 1,
+    CurrentValue = 16,
+    Flag = "WalkSpeedSlider", -- Unique identifier for configuration saving, if used
+    Callback = function(value)
+        updateWalkSpeed(value)
+    end,
+})
+
+local JumpPowerSlider = Tab2:CreateSlider({
+    Name = "JumpPower Slider",
+    Range = {0, 500},
+    Increment = 10,
+    CurrentValue = 50,
+    Flag = "JumpPowerSlider", -- Unique identifier for configuration saving, if used
+    Callback = function(value)
+        updateJumpPower(value)
+    end,
+})
+
+local Button4 = Tab3:CreateButton({
+    Name = "SpaceHub UESP",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+    end,
+})
